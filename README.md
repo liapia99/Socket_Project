@@ -14,18 +14,18 @@ and economy before and after each transaction. The server shuts down when ALL ti
 Note: You need to have a protocol of the conversation between the client and the server.
 
 Sample interactions :
-Client: Business or economy: B
-Client: Number of passengers? 2
-Client: Number of carry-ons? 2
-Client: Number of luggage? 3
-Server: Great, You got 2 tickets for $590
-Server: Remaining seats: Business 28 Economy 120
-Client: Business or economy: E
-Client: Number of passengers? 5
-Client: Number of carry-ons? 4
-Client: Number of luggage? 2
-Server: Great, You got 5 tickets for $580
-Server: Remaining seats: Business 28 Economy 115
+- Client: Business or economy: B
+- Client: Number of passengers? 2
+- Client: Number of carry-ons? 2
+-Client: Number of luggage? 3
+- Server: Great, You got 2 tickets for $590
+- Server: Remaining seats: Business 28 Economy 120
+- Client: Business or economy: E
+- Client: Number of passengers? 5
+- Client: Number of carry-ons? 4
+- Client: Number of luggage? 2
+- Server: Great, You got 5 tickets for $580
+- Server: Remaining seats: Business 28 Economy 115
 
 Extra credit:
 - Create a “Multithreaded” server so it can deal with multiple clients simultaneously.
