@@ -31,10 +31,11 @@ while 1:
      
     # read a sentence of bytes from socket sent by the client
     connectionSocket, addr = serverSocket.accept# Receive and process data from client
-    plane_class = str(connectionSocket.recv(1025).strip(), "utf-8")
-    seats = str(connectionSocket.recv(1025).strip(), "utf-8")
-    carryon = str(connectionSocket.recv(1025).strip(), "utf-8")
-    suitcases = str(connectionSocket.recv(1025).strip(), "utf-8")
+    
+    plane_class = connectionSocket.recv(1024).decode("utf-8").strip()
+    seats = connectionSocket.recv(1024).decode("utf-8").strip()
+    carryon = connectionSocket.recv(1024).decode("utf-8").strip()
+    suitcases = connectionSocket.recv(1024).decode("utf-8").strip()
 
     seat_num = int(seats)
     carry_on = int(carryon)
@@ -91,7 +92,7 @@ while 1:
 
 
     # output to console the sentence sent back to the client 
-    connectionSocket.send(bytes(response, "utf-8"))
+    connectionSocket.send(response.encode("utf-8"))
 
     # close the TCP connection; the welcoming socket continues
     connectionSocket.close()
