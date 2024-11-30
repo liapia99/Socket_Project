@@ -1,25 +1,31 @@
-#   TCPClient.py                                     
- 
-
 from socket import *
 
-serverName = "148.166.146.230"
+serverName = ""
 
-serverPort = 12001
+serverPort = 12009
 
 clientSocket = socket(AF_INET, SOCK_STREAM)
 
-clientSocket.connect((serverName,serverPort))
+clientSocket.connect((serverName, serverPort))
 
- 
-plane_class = input("Business or Economy: ")
-clientSocket.send(bytes(plane_class, "utf-8"))
 
-seats = input("Number of seats ")
-clientSocket.send(bytes(plane_class, "utf-8"))
 
-#print ("Sent to Square Server: ", sentence)
-modified_plane_class = clientSocket.recv(1025)
-print (int(modified_plane_class))
-      
+
+
+plane_class = input("Enter class (B for Business, E for Economy): ").strip()
+clientSocket.send(plane_class.encode("utf-8"))
+
+seats = input("Enter number of passengers: ").strip()
+clientSocket.send(seats.encode("utf-8"))  
+
+carryon = input("Enter number of carry-ons: ").strip()
+clientSocket.send(carryon.encode("utf-8")) 
+
+suitcases = input("Enter number of luggages: ").strip()
+clientSocket.send(suitcases.encode("utf-8")) 
+
+response = clientSocket.recv(1024).decode("utf-8")
+print("Receipt:", response)
+
+# Close the connection
 clientSocket.close()
