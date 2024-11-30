@@ -17,7 +17,7 @@ Sample interactions :
 - Client: Business or economy: B
 - Client: Number of passengers? 2
 - Client: Number of carry-ons? 2
--Client: Number of luggage? 3
+- Client: Number of luggage? 3
 - Server: Great, You got 2 tickets for $590
 - Server: Remaining seats: Business 28 Economy 120
 - Client: Business or economy: E
