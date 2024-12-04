@@ -29,4 +29,11 @@ Sample interactions :
 
 Extra credit:
 - Create a “Multithreaded” server so it can deal with multiple clients simultaneously.
+    - I used this website: https://www.geeksforgeeks.org/socket-programming-multi-threading-python/ 
 - Make a nice graphical interface, so the user can pick seats.
+
+
+get ip address of laptop first: `ipconfig getifaddr en0` 
+
+` python3 -m idlelib.idle` 
+
