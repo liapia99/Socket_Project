@@ -9,7 +9,7 @@ lock = Lock()
 def handle_reservation(plane_class, seat_num, carry_on, luggage):
     global class_B, class_E
 
-    with lock:  # Ensure thread-safe access to shared resources
+    with lock:  
         if plane_class == "B":
             if class_B < seat_num:
                 return "Not enough seats available in Business class."
