@@ -1,12 +1,11 @@
 import socket
 from threading import Thread, Lock
 
-# Global seating limits and lock for thread safety
+
 class_B = 30  # Business class seat limit
 class_E = 120  # Economy class seat limit
-lock = Lock()  # Lock to synchronize access to shared resources
+lock = Lock()  
 
-# Function to handle reservations
 def handle_reservation(plane_class, seat_num, carry_on, luggage):
     global class_B, class_E
 
@@ -33,7 +32,7 @@ def handle_reservation(plane_class, seat_num, carry_on, luggage):
             return f"Reserved {seat_num} seats in Economy class for ${totalcost}. Remaining: {class_E} seats."
         return "Invalid class: Use 'B' for Business or 'E' for Economy."
 
-# Multithreaded client thread
+# multithreaded client thread
 class ClientThread(Thread):
     def __init__(self, conn, ip, port):
         Thread.__init__(self)
@@ -69,7 +68,6 @@ class ClientThread(Thread):
         finally:
             self.conn.close()
 
-# Main server function
 def main():
     TCP_IP = '0.0.0.0'
     TCP_PORT = 2004
