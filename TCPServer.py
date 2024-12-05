@@ -27,7 +27,7 @@ print("The Socket Project running over TCP is ready to receive...")
 
 while 1:
     # server waits for incoming requests; new socket created on return
-    connectionSocket, addr = serverSocket.accept()  # Correct with parentheses
+    connectionSocket, addr = serverSocket.accept()  
      
     # read a sentence of bytes from socket sent by the client
     
@@ -40,7 +40,7 @@ while 1:
     carry_on = int(carryon)
     luggage = int(suitcases)
     
-# Reservation logic
+# Reservation logic ---------------------------------------------------------------------------
 
 # Business class
     if plane_class == 'B':
