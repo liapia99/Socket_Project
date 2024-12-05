@@ -39,11 +39,13 @@ while 1:
     seat_num = int(seats)
     carry_on = int(carryon)
     luggage = int(suitcases)
-    
-# Reservation logic ---------------------------------------------------------------------------
 
-# Business class
-    if plane_class == 'B':
+
+    
+# Reservation logic ----------------------------------------------------------------------------------------
+
+# Business class -------------------------------------------------------------------------------------------
+    if plane_class.strip().lower() == 'b':
         # check if there are seats left in business
         if class_B == 0:
             response = "No seats left in Business class."
@@ -66,7 +68,7 @@ while 1:
         else:
             response = "Not enough seats available in Business class."
 # Economy class -----------------------------------------------------------------------------------------------
-    elif plane_class == 'E':
+    elif plane_class.strip().lower() == 'e':
         # check if there are seats left in economy
         if class_E == 0:
             response = "No seats left in Economy class."
@@ -78,7 +80,7 @@ while 1:
                 cost = seat_num * 80
                 # calculate cost of luggage and carry-on only 
                 extracost = (carry_on * 20) + (luggage * 50)
-
+                #calculate total cost 
                 totalcost = cost + extracost
                 response = (f"Great, You got {seat_num} for ${totalcost}. "
                             f"Remaining seats: Economy {class_E} Business {class_B}")
@@ -91,6 +93,8 @@ while 1:
 
 
 
+
+    
     # output to console the sentence sent back to the client 
     connectionSocket.send(bytes(response, "utf-8"))
 
