@@ -27,5 +27,5 @@ clientSocket.send(suitcases.encode("utf-8"))
 response = clientSocket.recv(1024).decode("utf-8")
 print("Receipt:", response)
 
-# Close the connection
+# close the connection
 clientSocket.close()
